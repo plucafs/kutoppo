@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://buxlsgstoa2rg"]
+
+[ext_resource type="Theme" uid="uid://bkwyvewcog5j0" path="res://theme.tres" id="1_v6i6b"]
+[ext_resource type="Script" path="res://main.gd" id="2_3yhig"]
+[ext_resource type="Texture2D" uid="uid://ba4auxqbee64q" path="res://plus.svg" id="3_owpxl"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v6i6b")
+script = ExtResource("2_3yhig")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VSlider" type="VSlider" parent="MarginContainer/PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="StatusIconsScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StatusIconsContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/StatusIconsScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Plus" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_owpxl")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Click or drop application(s)"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer"]
+unique_name_in_owner = true
+title = "Open File(s)"
+ok_button_text = "Open"
+dialog_autowrap = true
+file_mode = 1
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Plus" to="." method="_on_plus_gui_input"]
+[connection signal="canceled" from="CanvasLayer/FileDialog" to="." method="_on_file_dialog_canceled"]

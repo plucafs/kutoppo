@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bkwyvewcog5j0"]
+
+[ext_resource type="FontFile" uid="uid://cj704m87e0xac" path="res://JetBrainsMonoNL-Regular.ttf" id="1_u02ne"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vptf4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btoh1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+skew = Vector2(0, -0.1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.560784, 0.8, 0.8, 1)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 16
+anti_aliasing_size = 10.0
+
+[resource]
+default_font = ExtResource("1_u02ne")
+default_font_size = 13
+Label/colors/font_color = Color(1, 1, 1, 0.733333)
+Label/styles/normal = SubResource("StyleBoxFlat_vptf4")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_btoh1")
