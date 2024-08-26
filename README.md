@@ -1,5 +1,20 @@
+![kutoppo godot editor screenshot](icons/kutoppo_icon.svg)
 # kutoppo
 Generate .desktop file by simply drag and drop applications
+
+<a href="#install">Install</a>
+<span>&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+<a href="#usage">Usage</a>
+<span>&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+<a href="#build">Build</a>
+<span>&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+<a href="#assumptions">Assumptions</a>
+<span>&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+<a href="#troubleshoot">Troubleshoot</a>
+<span>&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+<a href="#ideas">Ideas</a>
+<span>&nbsp;&nbsp;-&nbsp;&nbsp;</span>
+<a href="#credits">Credits</a>
 
 ![kutoppo godot editor screenshot](images/editor_screenshot_kutoppo.png)
 
@@ -27,6 +42,7 @@ git clone https://github.com/plucafs/kutoppo
 		- Install the templates (if it's your first export)
 	- Click Export project...
 	- Select the destination directory
+
 ### Assumptions
 1. The .desktop file name is created based on the application file name
 2. The .desktop file is placed inside `~/.local/share/applications`
