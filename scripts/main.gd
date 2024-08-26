@@ -6,8 +6,8 @@ extends Control
 
 var lock = false
 var file_dialog_is_open = false
-var icon_success = preload("res://success.svg")
-var icon_fail = preload("res://fail.svg")
+var icon_success = preload("res://icons/success.svg")
+var icon_fail = preload("res://icons/fail.svg")
 
 var output = []
 
