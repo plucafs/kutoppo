@@ -1,5 +1,5 @@
 # kutoppo
-Generate .desktop file by simply drag and drop
+Generate .desktop file by simply drag and drop applications
 
 ![kutoppo godot editor screenshot](images/editor_screenshot_kutoppo.png)
 
@@ -10,7 +10,7 @@ Generate .desktop file by simply drag and drop
 chmod +x kutoppo
 ```
 ### Usage
-1. Drag and drop one or multiple programs on the program window
+1. Drag and drop on the window or click to pick one or multiple applications 
 2. Search the program in the Application launcher and start it
 
 ### Build
@@ -18,7 +18,15 @@ chmod +x kutoppo
 ```sh
 git clone https://github.com/plucafs/kutoppo
 ```
-2. Open Godot, click on the Import button and select the `project.godot` file 
+2. Open Godot, click on the Import button and then select the `project.godot` file
+3. Follow these steps:
+	- Click on Project
+	- Click on Export
+	- Click on Add...
+	- Select Linux
+		- Install the templates (if it's your first export)
+	- Click Export project...
+	- Select the destination directory
 ### Assumptions
 1. The .desktop file name is created based on the application file name
 2. The .desktop file is placed inside `~/.local/share/applications`
@@ -27,7 +35,7 @@ git clone https://github.com/plucafs/kutoppo
 
 
 ### Troubleshoot
-1. The Application launcher doesn't find my programs
+1. The Application launcher doesn't find my applications
 
 - Try updating the desktop database
 ```sh
